@@ -1,0 +1,194 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Ganti font agar lebih mirip desain */
+    margin: 0;
+    overflow: hidden; /* Mencegah scroll saat ada elemen di luar viewport */
+    background-color: #f8faff; /* Pastikan background body juga cerah */
+}
+
+/* Import Google Font (Tambahkan ini di bagian paling atas file CSS Anda) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.login-page-container {
+    height: 100vh;
+    display: flex; /* Memastikan container mengambil tinggi penuh dan menggunakan flex */
+    width: 100vw; /* Memastikan container mengambil lebar penuh */
+}
+
+.row.g-0 {
+    width: 100%; /* Pastikan row mengambil lebar penuh dari parent flex container */
+    margin-left: 0; /* Pastikan tidak ada margin tambahan */
+    margin-right: 0; /* Pastikan tidak ada margin tambahan */
+}
+
+/* Left Section (Text & Form) */
+.left-section {
+    background-color: #f8faff; /* Warna background lebih terang */
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Gunakan flex untuk menengahkan konten secara vertikal */
+    align-items: center; /* Tengahkan vertikal */
+    justify-content: center; /* Tengahkan horizontal */
+    padding: 30px; /* Tambahkan padding agar tidak terlalu mepet */
+}
+
+.content-wrapper {
+    max-width: 500px; /* Batasi lebar konten */
+    width: 100%;
+    z-index: 10; /* Pastikan konten di atas shape */
+    /* Remove padding: 20px; here, handle padding with left-section */
+}
+
+.left-section h1 {
+    font-weight: 500; /* Medium */
+    color: #343a40;
+    font-size: 3rem; /* Perbesar sedikit */
+    margin-bottom: 0.5rem;
+}
+
+.name-highlight {
+    font-weight: 800; /* Extra bold */
+    color: #0d6efd;
+    line-height: 1.1;
+    font-size: 4.5rem; /* Perbesar agar lebih dominan */
+    word-break: break-word; /* Memastikan teks panjang tidak keluar kontainer */
+}
+
+.login-box-custom {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    max-width: 380px; /* Sedikit perlebar form */
+    margin-top: 3rem; /* Jarak dari nama */
+}
+
+/* Form Specifics (tetap sama) */
+.form-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+}
+
+/* Right Section (Image) */
+.right-section {
+    /*background-color: #e2e8f0; */ /* Ini bisa dihapus karena gambar yang jadi background */
+    position: relative;
+    overflow: hidden;
+    background-size: cover !important; /* Pastikan gambar selalu menutupi area */
+    background-position: center !important; /* Tengahkan gambar */
+    min-height: 400px; /* Minimal tinggi agar terlihat di layar tertentu */
+}
+
+/* --- Dekorasi Shape --- */
+.shape {
+    position: absolute;
+    border-radius: 50%; /* Default to circle */
+    background-color: rgba(255, 255, 255, 0.6); /* Warna default */
+    filter: blur(10px); /* Efek blur */
+    z-index: 1; /* Pastikan di belakang konten */
+}
+
+/* Left Section Shapes (Sesuaikan posisi agar tidak menimpa teks utama) */
+.left-section .shape {
+    background-color: rgba(200, 230, 255, 0.5); /* Biru muda transparan */
+}
+.left-section .circle-sm { width: 30px; height: 30px; top: 8%; left: 8%; } /* Ubah posisi */
+.left-section .circle-md { width: 60px; height: 60px; bottom: 12%; right: 8%; } /* Ubah posisi */
+.left-section .square-sm { width: 40px; height: 40px; border-radius: 5px; top: 25%; right: 10%; transform: rotate(45deg); } /* Ubah posisi */
+.left-section .triangle-md {
+    width: 0; height: 0; border-left: 30px solid transparent; border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(255, 220, 180, 0.5); /* Warna peach transparan */
+    border-radius: 0;
+    bottom: 8%; left: 15%; /* Ubah posisi */
+    transform: rotate(30deg);
+}
+.left-section .green { background-color: rgba(144, 238, 144, 0.5); }
+.left-section .orange { background-color: rgba(255, 165, 0, 0.5); }
+.left-section .lightblue { background-color: rgba(173, 216, 230, 0.5); }
+
+
+/* Right Section Shapes */
+.right-section .shape {
+    background-color: rgba(255, 255, 255, 0.4); /* Putih transparan untuk kontras dengan gambar */
+}
+.right-section .circle-lg { width: 100px; height: 100px; top: 15%; left: 5%; } /* Ubah posisi */
+.right-section .square-lg { width: 80px; height: 80px; border-radius: 15px; bottom: 15%; right: 8%; transform: rotate(60deg); } /* Ubah posisi */
+.right-section .triangle-sm {
+    width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent;
+    border-bottom: 35px solid rgba(255, 255, 0, 0.4); /* Kuning transparan */
+    border-radius: 0;
+    top: 5%; right: 15%; /* Ubah posisi */
+    transform: rotate(15deg);
+}
+.right-section .pink { background-color: rgba(255, 192, 203, 0.4); }
+.right-section .yellow { background-color: rgba(255, 255, 0, 0.4); }
+.right-section .white { background-color: rgba(255, 255, 255, 0.5); }
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .left-section {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 2rem 1rem;
+        min-height: 100vh; /* Pastikan mengambil tinggi penuh di mobile */
+    }
+    .content-wrapper {
+        margin: auto;
+        max-width: 350px;
+    }
+    .display-4 { font-size: 2rem; } /* Sesuaikan ukuran font di mobile */
+    .display-2 { font-size: 3rem; } /* Sesuaikan ukuran font di mobile */
+    .login-box-custom {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    .shape {
+        filter: blur(5px);
+    }
+    .left-section .circle-sm { top: 5%; left: 5%; }
+    .left-section .circle-md { bottom: 5%; right: 5%; }
+    .left-section .square-sm { top: 20%; right: 10%; }
+    .left-section .triangle-md { bottom: 1%; left: 10%; }
+
+    .right-section {
+        display: none !important; /* Sembunyikan sepenuhnya di mobile */
+    }
+}
+
+/* Media query untuk layar lebih besar tapi masih sempit (tablet) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .left-section h1 { font-size: 2.5rem; }
+    .name-highlight { font-size: 4rem; }
+    .login-box-custom {
+        max-width: 320px;
+        padding: 2rem;
+    }
+}
